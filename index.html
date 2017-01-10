@@ -1,0 +1,27 @@
+
+
+    <!doctype html>
+    <html ng-app="todoApp">
+      <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <script src="todo.js"></script>
+        <link rel="stylesheet" href="todo.css">
+      </head>
+      <body>
+        <h2>L3 Checklist </h2>
+        <div ng-controller="L3ChecklistController as todoList">
+          <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
+          <ul class="unstyled">
+            <li ng-repeat="todo in todoList.todos">
+              <label class="checkbox">
+                <input type="checkbox" ng-model="todo.done">
+                <span class="done-{{todo.done}}">{{todo.text}}</span>
+              </label>
+            </li>
+          </ul>
+
+
+        </div>
+      </body>
+    </html>
+
